@@ -5,10 +5,10 @@ const generateHTML = (pageName) => {
 
   <h1>Your <b>Work</b> is more important than <b>${pageName}</b></h1>
   <h3>So stop wasting your time on this and focus on your work.</h3>
-  <i id="advice">Loading...</i><br/>
-  <p>
+  <p id="advice">Loading...</p><br/>
+  <i>
     Made with ❤️ by Brijen Makwana
-  </p>
+  </i>
 `;
 };
 
@@ -58,21 +58,21 @@ const generateSTYLES = () => {
 
 
         p{
-            position: absolute; 
-            bottom: 5px;
-            right: 20px;
-            font-size: 1.2vw;
-            font-style: italic;
-            color: #000
-        }
-
-        i{
-            position: absolute; 
+          position: absolute; 
             bottom: 100px;
             right: 20px;
             color: #02383C;
             font-size: 1.4vw;
-            width: 20%;
+            width: 20%;  
+        }
+
+        i{
+            position: absolute; 
+            bottom: 30px;
+            right: 20px;
+            font-size: 1.2vw;
+            font-style: italic;
+            color: #000
         }
   
     </style>
@@ -129,6 +129,6 @@ switch (window.location.hostname) {
 fetch("https://api.adviceslip.com/advice")
   .then((res) => res.json())
   .then((res) => {
-    const i = document.getElementById("advice");
-    i.innerText = res.slip.advice;
+    const p = document.getElementById("advice");
+    p.innerText = res.slip.advice;
   });
