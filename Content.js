@@ -1,7 +1,7 @@
 // HTML content
 
 const generateHTML = (pageName) => {
-  return `<div>
+  return `
 
   <h1>Your <b>Work</b> is more important than <b>${pageName}</b></h1>
   <h3>So stop wasting your time on this and focus on your work.</h3>
@@ -9,7 +9,7 @@ const generateHTML = (pageName) => {
   <p>
     Made with ❤️ by Brijen Makwana
   </p>
-</div>`;
+`;
 };
 
 //css styling for the HTML
@@ -18,47 +18,42 @@ const generateSTYLES = () => {
   return ` 
     <style>
         html.default{
-            background-color: #fff;
-        }
+            background-color: #CFE1B9;        }
         
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-image: url('https://images.unsplash.com/photo-1472289065668-ce650ac443d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80');
-            background-repeat: no-repeat;
-            background-attachment: fixed; 
-            background-size: cover;
-            background-color: #fff;
+            background-color: #CFE1B9;
         }
 
         h1{
-            color: #E63E6D;
+            color: #718355;
             font-size: 3vw;
             font-style: italic;
+            text-align: center;
         }
 
         b{
             color: #000;
             font-size: 4vw;
-            animation-name: example;
-            animation-duration: 2s;
+            animation-name: text;
+            animation-duration: 1s;
             animation-timing-function: linear;
             animation-iteration-count: infinite;
             animation-direction: alternate;
             
         }
 
-        @keyframes example {
-          0%   {color: #000;}
-          50%  {color: #14FFEC;}
-          100% {color: #000;}
+        @keyframes text {
+          0%   {color: #718355;}
+          50%  {color: #000;}
+          100% {color: #718355;}
         }
 
         h3{
-            color: #000;
+            color: #718355;
             font-size: 1.5vw;
-            font-style: italic;
-            width: 20%;
-            
+            font-style: italic; 
+            text-align:  center;
         }
 
 
@@ -80,18 +75,9 @@ const generateSTYLES = () => {
             width: 20%;
         }
   
-    </style>`;
+    </style>
+    `;
 };
-
-// fetch new advice every time website loads
-
-fetch("https://api.adviceslip.com/advice")
-  .then((res) => res.json())
-  .then((res) => {
-    console.log(res.slip.advice);
-    const h = document.getElementById("advice");
-    h.innerText = res.slip.advice;
-  });
 
 // prevent this sites from opening
 
@@ -132,4 +118,17 @@ switch (window.location.hostname) {
     document.head.innerHTML = generateSTYLES();
     document.body.innerHTML = generateHTML("ALTBALAJI");
     break;
+  case "www.mxplayer.in":
+    document.head.innerHTML = generateSTYLES();
+    document.body.innerHTML = generateHTML("MXPLAYER");
+    break;
 }
+
+// fetch new advice every time website loads
+
+fetch("https://api.adviceslip.com/advice")
+  .then((res) => res.json())
+  .then((res) => {
+    const i = document.getElementById("advice");
+    i.innerText = res.slip.advice;
+  });
