@@ -26,7 +26,7 @@ const generateSTYLES = () => {
         }
 
         h1{
-            color: #718355;
+            color: #1B4332;
             font-size: 3vw;
             font-style: italic;
             text-align: center;
@@ -44,13 +44,13 @@ const generateSTYLES = () => {
         }
 
         @keyframes text {
-          0%   {color: #718355;}
+          0%   {color: #e63946;}
           50%  {color: #000;}
-          100% {color: #718355;}
+          100% {color: #e63946;}
         }
 
         h3{
-            color: #718355;
+            color: #1B4332;
             font-size: 1.5vw;
             font-style: italic; 
             text-align:  center;
