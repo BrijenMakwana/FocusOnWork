@@ -9,6 +9,10 @@
             "js": ["Content.js"]
         }
     ],
+    "host_permissions": [
+      "<all_urls>"
+    ],
+    "author":"Brijen Makwana",
     "action": {
         "default_icon": {
           "16": "images/icon_16.png",
